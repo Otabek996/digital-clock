@@ -1,0 +1,196 @@
+/*=============== FONTS ===============*/
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+
+/*=============== VARIABLES ===============*/
+:root {
+    --background: #F0F8FF;
+    --light: #fff;
+    --dark: #24292D;
+    --darker: #323840;
+}
+
+/*=============== STYLE ===============*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Orbitron', sans-serif;
+    transition: all 0.4s ease;
+}
+
+section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--background);
+    padding: 0 20px;
+}
+
+section.dark {
+    background: var(--dark);
+}
+
+section .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 220px;
+    max-width: 560px;
+    width: 100%;
+    background: var(--light);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    position: relative;
+}
+
+section.dark .container {
+    background: var(--darker);
+}
+
+section .container .icons i {
+    position: absolute;
+    right: 17px;
+    top: 17px;
+    height: 30px;
+    width: 30px;
+    background: var(--dark);
+    color: var(--light);
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+section.dark .container .icons i {
+    background: var(--light);
+    color: var(--darker);
+}
+
+.container .icons i.bxs-sun {
+    opacity: 0;
+    pointer-events: none;
+}
+
+section.dark .container .icons i.bxs-sun {
+    opacity: 1;
+    pointer-events: auto;
+    font-size: 16px;
+}
+
+section .container .time {
+    display: flex;
+    align-items: center;
+}
+
+.container .time .time-colon {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.time .time-colon .am_pm {
+    /*! TIME */
+    display: none;
+
+    position: absolute;
+    top: 0;
+    right: -50px;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+section.dark .time .time-colon .am_pm {
+    color: var(--light);
+}
+
+.time .time-colon .time-text {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    background: var(--background);
+    border-radius: 6px;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+section.dark .time .time-colon .time-text {
+    background: var(--dark);
+}
+
+.time .time-colon .time-text,
+.time .time-colon .colon {
+    font-size: 35px;
+    font-weight: 600;
+}
+
+section.dark .time .time-text .num,
+section.dark .time .colon {
+    color: var(--light);
+}
+
+.time .time-colon .colon {
+    font-size: 40px;
+    margin: 0 10px;
+}
+
+.time .time-colon .time-text .text {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+section.dark .time .time-colon .text {
+    color: var(--light);
+}
+
+/*=============== BREAKPOINTS ===============*/
+@media screen and (max-width: 635px) {
+    section .container {
+        max-width: 520px;
+    }
+
+    section .container .icons i {
+        width: 28px;
+        height: 28px;
+        line-height: 28px;
+        font-size: 12px;
+    }
+
+    .time .time-colon .time-text, 
+    .time .time-colon .colon {
+        font-size: 25px;
+    }
+
+    .time .time-colon .am_pm {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    section .container {
+        max-width: 320px;
+        height: 360px;
+    }
+
+    section .container .time {
+        display: block;
+    }
+
+    section .container .time .time-colon:nth-child(2) {
+        margin: 15px 0;
+    }
+
+    .time .time-colon .colon {
+        display: none;
+    }
+
+    .time .time-colon .am_pm {
+        top: -222px;
+    }
+}
