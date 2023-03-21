@@ -92,9 +92,6 @@ section .container .time {
 }
 
 .time .time-colon .am_pm {
-    /*! TIME */
-    display: none;
-
     position: absolute;
     top: 0;
     right: -50px;
